@@ -54,7 +54,7 @@ const Search = () => {
                     ? `https://image.tmdb.org/t/p/original/${
                         item.backdrop_path || item.profile_path
                       }`
-                    : "/no-image.jpg"
+                    : "/reelflix/no-image.jpg"
                 }
                 alt=""
               />

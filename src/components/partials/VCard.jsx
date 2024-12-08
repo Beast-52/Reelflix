@@ -17,7 +17,7 @@ const VCard = ({ data, title }) => {
               ? `https://image.tmdb.org/t/p/original/${
                   data.backdrop_path || data.profile_path || data.poster_path
                 }`
-              : "/no-image.jpg"
+              : "/reelflix/no-image.jpg"
           }
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           alt={data.title || data.name || "Image"}

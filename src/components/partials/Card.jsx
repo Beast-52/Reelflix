@@ -20,7 +20,7 @@ const Card = ({ data }) => {
                 ? `https://image.tmdb.org/t/p/original/${
                     data.backdrop_path || data.profile_path
                   }`
-                : "/no-image.jpg"
+                : "/reelflix/no-image.jpg"
             }
             className="w-full h-full object-cover"
             alt=""
