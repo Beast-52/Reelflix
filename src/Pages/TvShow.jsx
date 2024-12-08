@@ -4,6 +4,7 @@ import Dropdown from "../components/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import VCards from "../components/VCards";
 import { useFetch } from "../Hooks/useFetch"; // Custom hook to fetch data
+import Loading from "./Loading";
 
 const TvShows = () => {
   document.title = "Reelflix | Tv-Shows";
@@ -71,7 +72,7 @@ const TvShows = () => {
       setCardsData([]);
     };
   }, []);
-  return (
+  return cardsData ? (
     <div className="md:w-[80vw] w-full">
       <Search />
       <div className="px-5 flex justify-between mt-5">
@@ -112,7 +113,9 @@ const TvShows = () => {
         <h4 className="text-center text-2xl text-white">No data available.</h4> // Show message if no data available
       )}
     </div>
-  );
+  ):(
+    <Loading/>
+  )
 };
 
 export default TvShows;

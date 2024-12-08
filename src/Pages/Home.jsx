@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import { useFetch } from "../Hooks/useFetch";
 import Cards from "../components/Cards";
 import Dropdown from "../components/Dropdown";
+import Loading from "./Loading";
 
 function Home() {
   document.title = "Reelflix | Homepage";
@@ -38,9 +39,7 @@ function Home() {
       <h1>{error.message}</h1>
     </div>
   ) : (
-    <div className="h-screen w-full flex justify-center items-center bg-zinc-900 text-white text-4xl font-bold">
-      <h1>Loading...</h1>
-    </div>
+    <Loading />
   );
 }
 export default Home;

@@ -4,6 +4,7 @@ import Dropdown from "../components/Dropdown";
 import InfiniteScroll from "react-infinite-scroll-component";
 import VCards from "../components/VCards";
 import { useFetch } from "../Hooks/useFetch"; // Custom hook to fetch data
+import Loading from "./Loading";
 
 const Trending = () => {
   document.title = 'Reelflix | Trending'
@@ -73,7 +74,7 @@ const Trending = () => {
     if (!loading) setPage((prev) => prev + 1); // Increment page number to load more data
   };
 
-  return (
+  return cardsData.length > 0 ? (
     <div className="md:w-[80vw] w-full">
       <Search />
       <div className="px-5 flex justify-between mt-5">
@@ -113,7 +114,9 @@ const Trending = () => {
         <h4 className="text-center text-2xl text-white">No data available.</h4> // Show message if no data available
       )}
     </div>
-  );
+  ):(
+<Loading/>
+  )
 };
 
 export default Trending;

@@ -7,6 +7,7 @@ import {
 } from "../redux/actions/peopleActions";
 import Cards from "../components/Cards";
 import Dropdown from "../components/Dropdown";
+import Loading from "./Loading";
 
 const PersonDetails = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const PersonDetails = () => {
   }, [id]);
 
   return (
-    info && (
+    info ? (
       <div className="px-5 sm:px-10 lg:px-[10%] w-[80vw]  mx-auto min-h-screen  text-white">
         {/* Navigation */}
         <nav className="h-[8vh] w-full flex items-center gap-4 text-xl">
@@ -167,6 +168,8 @@ const PersonDetails = () => {
           </div>
         </div>
       </div>
+    ):(
+      <Loading/>
     )
   );
 };
