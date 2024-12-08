@@ -151,7 +151,7 @@ const PersonDetails = () => {
                     className="hover:bg-[#19191d] p-4 rounded-md transition duration-300 cursor-pointer"
                   >
                     <Link
-                      to={`/${category}/details/${c?.id}`}
+                      to={`/reelflix/${category}/details/${c?.id}`}
                       className="block"
                     >
                       <strong>{c?.name || c?.title}</strong>

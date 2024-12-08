@@ -6,7 +6,7 @@ const VCard = ({ data, title }) => {
 
   return (
     <Link
-      to={`/${title || (data.media_type == 'people' ? 'person' : data.media_type) }/details/${data.id}`}
+      to={`/reelflix/${title || (data.media_type == 'people' ? 'person' : data.media_type) }/details/${data.id}`}
       className="h-[28rem] w-72 relative group flex-shrink-0 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
     >
       {/* Image Wrapper */}

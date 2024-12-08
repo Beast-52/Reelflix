@@ -77,7 +77,7 @@ const Sidenav = () => {
         `}
       >
         <Link
-          to="/"
+          to="/reelflix/"
           className="flex text-4xl text-golden-yellow gap-2 items-center py-2 mt-5"
         >
           <i className="ri-movie-2-ai-fill"></i>
@@ -91,7 +91,7 @@ const Sidenav = () => {
             {linksArr[0].map((item, index) => (
               <NavLink
                 key={index}
-                to={`/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
+                to={`/reelflix/${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                 onClick={toggleSidebar}
                 className={({ isActive }) =>
                   `md:text-xl md:mb-5  ${

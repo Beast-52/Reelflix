@@ -20,11 +20,13 @@ const Header = ({ data }) => {
         </h1>
         <p className="md:text-xl font-semibold ">
           {data.overview.slice(0, 200)}
-          <Link className="text-blue-400">...more</Link>
+          <Link 
+          to={`/reelflix/${data.media_type}/details/${data.id}`}
+          className="text-blue-400">...more</Link>
         </p>
         <p></p>
         <Link
-          to={`${data.media_type}/details/${data.id}/trailer`}
+          to={`/reelflix/${data.media_type}/details/${data.id}/trailer`}
           className="px-5 py-2 md:text-2xl font-semibold text-white bg-golden-yellow self-start rounded mt-2"
         >
           Watch Trailer

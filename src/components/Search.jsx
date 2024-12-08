@@ -43,7 +43,7 @@ const Search = () => {
         <div className="absolute top-[12vh] left-1/2 -translate-x-1/2 w-[70%] bg-zinc-800 border border-zinc-700 rounded-xl shadow-lg max-h-[50vh] overflow-auto">
           {results.map((item, index) => (
             <Link
-              to={`/${item.media_type}/details/${item.id}`}
+              to={`/reelflix/${item.media_type}/details/${item.id}`}
               key={item.release_date}
               className="flex items-center px-5 py-4 hover:bg-zinc-700 text-zinc-100 text-lg font-medium transition"
             >

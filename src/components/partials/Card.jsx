@@ -8,8 +8,8 @@ const Card = ({ data }) => {
       <Link
         to={
           pathname.includes("movie")
-            ? `/movie/details/${data.id}`
-            : `/${data.media_type}/details/${data.id}`
+            ? `/reelflix/movie/details/${data.id}`
+            : `/reelflix/${data.media_type}/details/${data.id}`
         }
         className="h-[25rem] w-64 rounded flex flex-col gap-5   bg-zinc-800 flex-shrink-0 "
       >
