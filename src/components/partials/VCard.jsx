@@ -1,12 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const VCard = ({ data, title }) => {
   if (!data) return null;
-
+  const { pathname } = useLocation();
   return (
     <Link
-      to={`/reelflix/${title || (data.media_type == 'people' ? 'person' : data.media_type) }/details/${data.id}`}
+      to={`/reelflix/${
+        title || (data.media_type == "people" ? "person" : data.media_type)
+      }/details/${data.id}`}
       className="h-[28rem] w-72 relative group flex-shrink-0 overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
     >
       {/* Image Wrapper */}
@@ -17,7 +19,7 @@ const VCard = ({ data, title }) => {
               ? `https://image.tmdb.org/t/p/original/${
                   data.backdrop_path || data.profile_path || data.poster_path
                 }`
-              : "/reelflix/no-image.jpg"
+              : `${pathname[0]}no-image.jpg`
           }
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           alt={data.title || data.name || "Image"}

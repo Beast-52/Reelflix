@@ -1,16 +1,17 @@
 import axios from "../utils/axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Search = () => {
   const [query, setQuery] = useState("");
   const clearQuery = () => setQuery("");
   const [results, setResults] = useState([]);
-
+  const { pathname } = useLocation();
   const searchMovies = async () => {
     const response = await axios.get(`search/multi?query=${query}`);
     setResults(response.data.results);
   };
+  const newPath = pathname.split("reelflix");
   useEffect(() => {
     searchMovies();
   }, [query]);
@@ -54,7 +55,7 @@ const Search = () => {
                     ? `https://image.tmdb.org/t/p/original/${
                         item.backdrop_path || item.profile_path
                       }`
-                    : "/reelflix/no-image.jpg"
+                    : `${newPath[0]}reelflix/no-image.jpg`
                 }
                 alt=""
               />

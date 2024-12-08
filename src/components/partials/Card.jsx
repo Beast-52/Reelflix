@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 const Card = ({ data }) => {
   const { pathname } = useLocation();
-
+  const newPath = pathname.split('reelflix')
   return (
     data && (
       <Link
@@ -20,7 +20,7 @@ const Card = ({ data }) => {
                 ? `https://image.tmdb.org/t/p/original/${
                     data.backdrop_path || data.profile_path
                   }`
-                : "/reelflix/no-image.jpg"
+                : `${newPath[0]}reelflix/no-image.jpg`
             }
             className="w-full h-full object-cover"
             alt=""
