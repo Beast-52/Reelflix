@@ -18,28 +18,19 @@ const App = () => {
       <Sidenav />
       <Outlet />
       <Routes>
-        <Route path="/reelflix/" element={<Home />} />
-        <Route path="/reelflix/trending" element={<Trending />} />
-        <Route path="/reelflix/popular" element={<Popular />} />
-        <Route path="/reelflix/movie" element={<Movies />} />
-        <Route path="/reelflix/tv" element={<TvShows />} />
-        <Route path="/reelflix/people" element={<People />} />
-        <Route path="/reelflix/movie/details/:id" element={<MovieDetails />}>
-          <Route
-            path="/reelflix/movie/details/:id/trailer"
-            element={<Trailer />}
-          />
+        <Route path="/" element={<Home />} />
+        <Route path="/trending" element={<Trending />} />
+        <Route path="/popular" element={<Popular />} />
+        <Route path="/movie" element={<Movies />} />
+        <Route path="/tv" element={<TvShows />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/movie/details/:id" element={<MovieDetails />}>
+          <Route path="/movie/details/:id/trailer" element={<Trailer />} />
         </Route>
-        <Route path="/reelflix/tv/details/:id" element={<TvDetails />}>
-          <Route
-            path="/reelflix/tv/details/:id/trailer"
-            element={<Trailer />}
-          />
+        <Route path="/tv/details/:id" element={<TvDetails />}>
+          <Route path="/tv/details/:id/trailer" element={<Trailer />} />
         </Route>
-        <Route
-          path="/reelflix/person/details/:id"
-          element={<PersonDetails />}
-        />
+        <Route path="/person/details/:id" element={<PersonDetails />} />
       </Routes>
     </div>
   );
